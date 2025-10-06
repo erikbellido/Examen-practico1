@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prescripciones - Botica Online</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Botica Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="clientes.html">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pedidos.html">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="prescripciones.html">Prescripciones</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h1 class="mb-4">Gestión de Prescripciones</h1>
+
+        <!-- Formulario para Subir Prescripción -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Subir Nueva Prescripción</h5>
+            </div>
+            <div class="card-body">
+                <form id="prescriptionForm">
+                    <div class="mb-3">
+                        <label for="prescriptionFileName" class="form-label">Nombre del Archivo (simulado)</label>
+                        <input type="text" class="form-control" id="prescriptionFileName" placeholder="Ej: receta_juan_perez.pdf" required>
+                        <div class="form-text">En una aplicación real, esto sería una subida de archivo. Aquí simulamos el nombre.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prescriptionClientId" class="form-label">ID del Cliente</label>
+                        <input type="number" class="form-control" id="prescriptionClientId" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prescriptionOrderId" class="form-label">ID del Pedido (opcional)</label>
+                        <input type="number" class="form-control" id="prescriptionOrderId">
+                        <div class="form-text">Asocia la prescripción a un pedido existente.</div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Subir Prescripción</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Búsqueda y Validación de Prescripción -->
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="mb-0">Buscar y Validar Prescripción</h5>
+            </div>
+            <div class="card-body">
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="searchPrescriptionId" placeholder="ID de la Prescripción">
+                    <button class="btn btn-primary" type="button" id="searchPrescriptionBtn">Buscar Prescripción</button>
+                </div>
+                <div id="prescriptionDetails" class="mt-3">
+                    <!-- Detalles de la prescripción se mostrarán aquí -->
+                </div>
+                <div class="mt-3" id="validatePrescriptionSection" style="display: none;">
+                    <button type="button" class="btn btn-warning" id="validatePrescriptionBtn">Validar Prescripción</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">&copy; 2025 Botica Online. Todos los derechos reservados.</span>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

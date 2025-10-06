@@ -1,0 +1,6 @@
+@BoticaOnlineAPI_HostAddress = http://localhost:5143
+
+GET {{BoticaOnlineAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
